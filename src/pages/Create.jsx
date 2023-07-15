@@ -3,6 +3,7 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import storage from '../config/firebase.config';
 import CircularLoader from '../components/reusable/CircularLoader';
 import { apiUrl } from '../config/apiEp';
+import { resourceTypeOptions, categoryOptions, gradeOptions } from '../constants/createForm';
 import axios from 'axios';
 console.log(storage)
 const Create = () => {
@@ -72,6 +73,12 @@ const Create = () => {
       if (formData.resourceType.trim() === '') {
         newErrors.resourceType = 'Resource Type is required';
       }
+      if (formData.grade.trim() === '') {
+        newErrors.grade = 'Grade is required';
+      }
+      if (formData.category.trim() === '') {
+        newErrors.category = 'Category is required';
+      }
       setErrors(newErrors);
 
 
@@ -91,8 +98,6 @@ const Create = () => {
 
     }
   };
-
-  const resourceTypes = ['PDF', 'Word', 'Link', 'Image', 'Others'];
 
   return (
     <div className="container mx-auto mt-20">
@@ -166,6 +171,69 @@ const Create = () => {
             {errors.username && <p className="text-red-500 text-xs mt-1">{errors.username}</p>}
           </div>
           <div>
+            <label htmlFor="category" className="block text-sm font-medium mb-1">
+              Category<span className="text-red-500">*</span>
+            </label>
+            <select
+              id="category"
+              name="category"
+              value={formData.category}
+              onChange={handleChange}
+              className="w-full py-2 px-3 border rounded-sm text-dark font-bold text-xl"
+            >
+              <option value="">Select Category</option>
+              {categoryOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            {errors.category && <p className="text-red-500 text-xs mt-1">{errors.category}</p>}
+          </div>
+          <div>
+            <label htmlFor="resourceType" className="block text-sm font-medium mb-1">
+              Resource Type<span className="text-red-500">*</span>
+            </label>
+            <select
+              id="resourceType"
+              name="resourceType"
+              value={formData.resourceType}
+              onChange={handleChange}
+              className="w-full py-2 px-3 border rounded-sm text-dark font-bold text-xl"
+              required
+            >
+              <option value="">Select Resource Type</option>
+              {resourceTypeOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            {errors.resourceType && <p className="text-red-500 text-xs mt-1">{errors.resourceType}</p>}
+
+          </div>
+          <div>
+            <label htmlFor="grade" className="block text-sm font-medium mb-1">
+              Grade<span className="text-red-500">*</span>
+            </label>
+            <select
+              id="grade"
+              name="grade"
+              value={formData.grade}
+              onChange={handleChange}
+              className="w-full py-2 px-3 border rounded-sm text-dark font-bold text-xl"
+            >
+              <option value="">Select Grade</option>
+              {gradeOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            {errors.grade && <p className="text-red-500 text-xs mt-1">{errors.grade}</p>}
+
+          </div>
+          <div>
             <label htmlFor="description" className="block text-sm font-medium mb-1">
               Description
             </label>
@@ -177,53 +245,6 @@ const Create = () => {
               className="w-full py-2 px-3 border rounded-sm text-dark font-bold text-xl"
               rows="3"
             ></textarea>
-          </div>
-          <div>
-
-            <label htmlFor="resourceType" className="block text-sm font-medium mb-1">
-              Resource Type
-            </label>
-            <select
-              id="resourceType"
-              name="resourceType"
-              value={formData.resourceType}
-              onChange={handleChange}
-              className="w-full py-2 px-3 border rounded-sm text-dark font-bold text-xl"
-            >
-              <option value="">Select Resource Type</option>
-              {resourceTypes.map((type, index) => (
-                <option key={index} value={type}>
-                  {type}
-                </option>
-              ))}
-            </select>
-            {errors.resourceType && <p className="text-red-500 text-xs mt-1">{errors.resourceType}</p>}
-          </div>
-          <div>
-            <label htmlFor="category" className="block text-sm font-medium mb-1">
-              Category
-            </label>
-            <input
-              type="text"
-              id="category"
-              name="category"
-              value={formData.category}
-              onChange={handleChange}
-              className="w-full py-2 px-3 border rounded-sm text-dark font-bold text-xl"
-            />
-          </div>
-          <div>
-            <label htmlFor="grade" className="block text-sm font-medium mb-1">
-              Grade
-            </label>
-            <input
-              type="text"
-              id="grade"
-              name="grade"
-              value={formData.grade}
-              onChange={handleChange}
-              className="w-full py-2 px-3 border rounded-sm text-dark font-bold text-xl"
-            />
           </div>
           <button
             type="submit"
