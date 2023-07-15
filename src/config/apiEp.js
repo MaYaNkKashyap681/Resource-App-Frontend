@@ -1,1 +1,1 @@
-const apiUrl = "https://server-amber-eta.vercel.app/"
+export const apiUrl = import.meta.env.VITE_APIURL
