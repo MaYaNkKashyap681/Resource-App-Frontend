@@ -8,7 +8,7 @@ console.log(storage)
 const Create = () => {
   const [formData, setFormData] = useState({
     title: '',
-    resource: 'nskbfsbff',
+    resource: '',
     username: '',
     description: '',
     resourceType: '',
