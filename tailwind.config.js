@@ -3,6 +3,14 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      colors: {
+        "green1": '#4cbf8a',
+        "green2": '#88d6b3',
+        "white": '#fbf4fb',
+        "dark": '#373a4e',
+        "brownish": '#8e685b',
+        "violetss": '#c5a4f4'
+      },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         ReemKufi: ["Reem Kufi", "sans-serif"],

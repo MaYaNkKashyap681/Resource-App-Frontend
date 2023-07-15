@@ -1,0 +1,1 @@
+const apiUrl = "https://server-amber-eta.vercel.app/"
