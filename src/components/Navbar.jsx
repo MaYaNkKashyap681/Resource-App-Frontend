@@ -4,8 +4,8 @@ import { navigationLinksList } from '../constants/navigation'
 
 const Navbar = () => {
     return (
-        <nav >
-            <div className='bg-white flex items-center container mx-auto justify-between py-6' >
+        <nav className='sticky top-0 z-999'>
+            <div className='bg-white flex items-center container mx-auto justify-between py-6 ' >
                 <div>
                     <Link to="/">
                         <span className='font-bold font-nunito text-3xl text-dark'>
@@ -27,7 +27,7 @@ const Navbar = () => {
                     </Link>
                 </div>
             </div>
-            <div className='bg-dark h-10 w-full my-2 flex justify-center items-center'>
+            <div className='bg-dark h-10 w-full  flex justify-center items-center'>
                 <p className='text-xl text-green2 font-poppins flex justify-center'>* Get latest resources here for free of cost, in any Category and Domain</p>
             </div>
         </nav>

@@ -19,9 +19,9 @@ const Hero = () => {
                     </ul>
                 </div>
             </div>
-            <div className='w-[40%] flex items-center justify-center scale-110'>
-                <div className="h-[16rem] w-[24rem] absolute rounded-full bottom-[6rem] top-32 left-[-20px] bg-green1 blur-[120px] opacity-40 z-[-10]"></div>
-                <img src={notebook} alt="notebook" />
+            <div className='w-[40%] flex items-center justify-center relative z-[-10]'>
+                <div className="h-[18rem] w-[18rem] absolute rounded-full bottom-[6rem] top-32 left-[-20px] bg-green1 blur-[120px] opacity-40 z-[-10]"></div>
+                <img src={notebook} alt="notebook"/>
             </div>
 
         </div>

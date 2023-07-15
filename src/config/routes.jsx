@@ -10,7 +10,7 @@ const AppLayout = () => {
     <>
       <Navbar />
       <Outlet />
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }
