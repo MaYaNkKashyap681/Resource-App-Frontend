@@ -15,7 +15,7 @@ const Navbar = () => {
                 </div>
                 <div className='flex gap-8 items-center'>
                     {
-                        nakvigationLinksList.map(({ name, path }, index) => (
+                        navigationLinksList.map(({ name, path }, index) => (
                             <Link to={`${path}`} key={index}>
                                 <span className='text-xl text-green1 font-normal hover:text-dark'>{name}</span>
                             </Link>
