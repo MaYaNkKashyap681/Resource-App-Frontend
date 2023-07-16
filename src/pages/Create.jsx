@@ -107,16 +107,18 @@ const Create = () => {
         const resposne = await axios.post(`${apiUrl}/material/add`, formData)
         if (resposne.status === 201) {
           alert("Resource Uploaded Succesfully")
-          navigation.navigate('/resources');
+          window.location.href = '/resources';
         }
       }
     }
     catch (error) {
-      alert("There is some error")
+
     }
     finally {
     }
   };
+
+
 
   return (
     <div className="container mx-auto mt-20">
@@ -272,6 +274,7 @@ const Create = () => {
           </button>
         </form>
       </div>
+      
     </div>
   );
 };
