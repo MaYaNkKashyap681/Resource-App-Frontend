@@ -6,7 +6,7 @@ const Hero = () => {
     return (
         <div className='py-8 flex mt-8'>
             <div className='font-poppins w-[60%]'>
-                <p className='text-5xl  text-dark'>Welcome to StudyShare</p>
+                <p className='text-5xl  text-dark'>Welcome to EduExchange</p>
                 <p className='text-2xl font-light'>Share and Discover Study Materials Online</p>
                 <div>
                     <p className='mt-4 text-xl font-semibold text-green1'>Elevate your learning experience with StudyShare, the ultimate platform for students and educators to connect, collaborate, and share study materials. Unlock a world of knowledge at your fingertips</p>
