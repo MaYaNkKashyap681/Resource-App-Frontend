@@ -4,7 +4,7 @@ import { navigationLinksList } from '../constants/navigation'
 
 const Navbar = () => {
     return (
-        <nav className='bg-white sticky top-0 z-999'>
+        <nav className='bg-white sticky top-0 z-[999]'>
             <div className=' flex items-center container mx-auto justify-between py-6 ' >
                 <div>
                     <Link to="/">

@@ -4,9 +4,12 @@ import storage from '../config/firebase.config';
 import CircularLoader from '../components/reusable/CircularLoader';
 import { apiUrl } from '../config/apiEp';
 import { resourceTypeOptions, categoryOptions, gradeOptions } from '../constants/createForm';
-import axios from 'axios';
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
+
 console.log(storage)
 const Create = () => {
+  const navigation = useNavigate();
   const [formData, setFormData] = useState({
     title: '',
     resource: '',
@@ -18,9 +21,29 @@ const Create = () => {
   });
 
   const [file, setFile] = useState(null);
+
+  // const thumbnailGenerator = async () => {
+  //   try {
+  //     const response = await axios.post(`http://localhost:3000/material/python`);
+  //     console.log(response);
+  //   }
+  //   catch (error) {
+  //     console.log(error)
+  //   }
+  // }
+
   const handleFileChange = (e) => {
-    const selectedFile = e.target.files[0];
-    setFile(selectedFile);
+    try {
+      // thumbnailGenerator();
+      const selectedFile = e.target.files[0];
+      setFile(selectedFile);
+    }
+    catch (err) {
+      console.log("Error")
+    }
+    finally {
+
+    }
   };
 
 
@@ -80,14 +103,11 @@ const Create = () => {
         newErrors.category = 'Category is required';
       }
       setErrors(newErrors);
-
-
-
       if (Object.keys(newErrors).length === 0) {
-
         const resposne = await axios.post(`${apiUrl}/material/add`, formData)
         if (resposne.status === 201) {
-          console.log(resposne.data.data)
+          alert("Resource Uploaded Succesfully")
+          navigation.navigate('/resources');
         }
       }
     }
@@ -95,7 +115,6 @@ const Create = () => {
       alert("There is some error")
     }
     finally {
-
     }
   };
 
@@ -150,7 +169,6 @@ const Create = () => {
               value={formData.resource}
               onChange={handleChange}
               className="w-full py-2 px-3 border rounded-sm text-dark font-bold text-xl"
-              disabled={true}
               required
             />
             {errors.resource && <p className="text-red-500 text-xs mt-1">{errors.resource}</p>}
