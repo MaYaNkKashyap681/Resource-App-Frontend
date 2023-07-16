@@ -81,4 +81,6 @@ There are a few areas in the Study Material Repository that are currently not wo
 
 5. **App Building Strategies**: There might be better strategies or architectural patterns that can be employed to enhance the scalability, performance, and maintainability of the Study Material Repository. Exploring and implementing these strategies could lead to a more robust and efficient application.
 
-Addressing these issues would improve the overall functionality, usability, and efficiency of the Study Material Repository.
+Addressing these issues would improve the overall functionality, usability, and efficiency of the Study Material Repository.        
+
+
