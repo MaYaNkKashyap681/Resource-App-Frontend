@@ -2,8 +2,9 @@
 
 This is a simple web-based study material repository built using React, Node.js, Express, Tailwind CSS, and JavaScript. It utilizes state management and filtering for the organization of the app, debouncing for search functionality, and Firebase for uploading files and retrieving links.
 
-![Screenshot (68)](https://github.com/MaYaNkKashyap681/Resource-App-Frontend/assets/96070627/0c95b5c0-0e42-4636-b7e2-a737c2b9266c)
-![Screenshot (69)](https://github.com/MaYaNkKashyap681/Resource-App-Frontend/assets/96070627/4fa76924-94fa-49c2-8c7f-e55f0235b954)
+<img width="941" alt="Screenshot 2023-07-17 112717" src="https://github.com/MaYaNkKashyap681/Resource-App-Frontend/assets/96070627/f2baa655-6bd6-4076-bd02-6876ef54d538">
+
+<img width="941" alt="Screenshot 2023-07-17 112802" src="https://github.com/MaYaNkKashyap681/Resource-App-Frontend/assets/96070627/30c03a5a-2cae-46dc-aa39-e684c6b1921f">
 
 
 ## Installation
