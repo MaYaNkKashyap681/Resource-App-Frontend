@@ -25,7 +25,7 @@ const Resources = () => {
 
   const fetchResourceList = async () => {
     try {
-      console.log(`${apiUrl}/material/all`)
+      // console.log(`${apiUrl}/material/all`)
       const response = await axios.get(`${apiUrl}/material/all`);
       if (response.status === 200) {
         setResourceList(response.data.data)
@@ -46,7 +46,7 @@ const Resources = () => {
   const [searchTimeOut, setSearchTimeOut] = useState(null);
 
   const updateList = (tabCategory) => {
-    console.log(tabCategory)
+    // console.log(tabCategory)
     const searchResults = resourceList.filter((item) => {
       if (
         item.username.toLowerCase().includes(tabCategory.toLowerCase()) ||
@@ -55,7 +55,7 @@ const Resources = () => {
       ) {
         return item;
       }
-      console.log(tabCategory)
+      // console.log(tabCategory)
     });
     setSearchedResults(searchResults);
   }
@@ -76,7 +76,7 @@ const Resources = () => {
             return item;
           }
         });
-        console.log(searchResults)
+        // console.log(searchResults)
         setSearchedResults(searchResults);
       }, 500)
     );

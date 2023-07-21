@@ -1,5 +1,6 @@
 import React from 'react'
 import { featureList } from '../../constants/featuresList';
+import useIsMobile from '../../customHooks/useIsMobile';
 
 const FeatureContent = ({ title, description, icon }) => {
     return (
@@ -12,10 +13,11 @@ const FeatureContent = ({ title, description, icon }) => {
 }
 
 const Features = () => {
+    const isMobile = useIsMobile();
     return (
         <div className='mt-20'>
            <h2 className='font-bold text-4xl text-dark font-poppins text-center'>Features we Offer</h2>
-            <div className='grid grid-rows-1 grid-cols-3 gap-8 mt-6'>
+            <div className={`grid ${isMobile ? 'grid-col-1' : 'grid-rows-1 grid-cols-3'} gap-8 mt-6`}>
                 {
                     featureList.map((feature, index) => (
                         <FeatureContent key={index} {...feature} />

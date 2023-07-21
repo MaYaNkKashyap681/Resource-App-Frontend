@@ -7,7 +7,7 @@ import { resourceTypeOptions, categoryOptions, gradeOptions } from '../constants
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 
-console.log(storage)
+// console.log(storage)
 const Create = () => {
   const navigation = useNavigate();
   const [formData, setFormData] = useState({
@@ -39,7 +39,7 @@ const Create = () => {
       setFile(selectedFile);
     }
     catch (err) {
-      console.log("Error")
+      // console.log("Error")
     }
     finally {
 
@@ -64,12 +64,12 @@ const Create = () => {
       const storageRef = ref(storage, 'path/to/upload/' + file.name);
       const snapshot = await uploadBytes(storageRef, file);
 
-      console.log('File uploaded successfully');
+      // console.log('File uploaded successfully');
       const fileUrl = await getDownloadURL(snapshot.ref);
       // console.log('Download URL:', fileUrl);
       setFormData({ ...formData, resource: fileUrl })
     } catch (error) {
-      console.log('Error uploading file:', error);
+      // console.log('Error uploading file:', error);
     }
     finally {
       setIsUploading(false)

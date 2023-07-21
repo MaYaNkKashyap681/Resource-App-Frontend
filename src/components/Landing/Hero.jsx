@@ -1,11 +1,13 @@
 import React from 'react'
 import { featuresList } from '../../constants/heroList'
 import notebook from '../../assets/notebook3d.png'
+import useIsMobile from '../../customHooks/useIsMobile'
 
 const Hero = () => {
+    const isMobile = useIsMobile();
     return (
-        <div className='py-8 flex mt-8'>
-            <div className='font-poppins w-[60%]'>
+        <div className={`py-8 mt-8 ${isMobile ? 'flex-col' :'flex'}`}>
+            <div className={`font-poppins ${isMobile ? '' : 'w-[60%]'}`}>
                 <p className='text-5xl  text-dark'>Welcome to EduExchange</p>
                 <p className='text-2xl font-light'>Share and Discover Study Materials Online</p>
                 <div>
@@ -19,7 +21,7 @@ const Hero = () => {
                     </ul>
                 </div>
             </div>
-            <div className='w-[40%] flex items-center justify-center relative z-[-10]'>
+            <div className={`${isMobile ? '' : 'w-[40%]'}  flex items-center justify-center relative z-[-10]`}>
                 <div className="h-[18rem] w-[18rem] absolute rounded-full bottom-[6rem] top-32 left-[-20px] bg-green1 blur-[120px] opacity-40 z-[-10]"></div>
                 <img src={notebook} alt="notebook"/>
             </div>
